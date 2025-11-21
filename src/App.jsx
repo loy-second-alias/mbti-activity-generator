@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MBTI_TYPES } from './data';
-import { generateActivities } from './api/gemini';
+import { getRandomActivities } from './data/activities';
 import { MBTICard } from './components/MBTICard';
 import { ActivityCard } from './components/ActivityCard';
 import { Background } from './components/Background';
@@ -30,37 +30,19 @@ function App() {
   }, [settings]);
 
   // Handlers
-  const handleTypeSelect = async (type) => {
+  const handleTypeSelect = (type) => {
     setSelectedType(type);
     setView('suggestions');
-    setGeneratedActivities([]); // Clear previous
 
-    // Auto-generate if empty (optional, or wait for user?)
-    // Let's auto-generate
-    setLoading(true);
-    setError(null);
-    try {
-      const activities = await generateActivities(type);
-      setGeneratedActivities(activities);
-    } catch (err) {
-      setError('Failed to generate activities. The stars are cloudy.');
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+    // Get random activities from database
+    const activities = getRandomActivities(type.code, 4);
+    setGeneratedActivities(activities);
   };
 
-  const handleRegenerate = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const activities = await generateActivities(selectedType);
-      setGeneratedActivities(activities);
-    } catch (err) {
-      setError('Failed to regenerate.');
-    } finally {
-      setLoading(false);
-    }
+  const handleRegenerate = () => {
+    // Get different random activities from database
+    const activities = getRandomActivities(selectedType.code, 4);
+    setGeneratedActivities(activities);
   };
 
   const toggleFavorite = (activity) => {
@@ -103,16 +85,9 @@ function App() {
         </div>
       </div>
 
-      {loading ? (
+      {generatedActivities.length === 0 ? (
         <div className="loading-container">
-          <div className="spinner" style={{ borderColor: `var(--color-${selectedType.color}-primary)` }}></div>
-          <p className="loading-text">Consulting the stars for {selectedType.name}...</p>
-        </div>
-      ) : error ? (
-        <div className="error-container glass-panel">
-          <h3>✨ Oops!</h3>
-          <p>{error}</p>
-          <button className="glass-light retry-btn" onClick={handleRegenerate}>Try Again</button>
+          <p className="loading-text">Select a personality type to see activities!</p>
         </div>
       ) : (
         <>

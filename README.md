@@ -1,19 +1,20 @@
 # MBTI Activity Generator
 
-A beautiful, AI-powered activity suggestion app based on MBTI personality types.
+A beautiful activity suggestion app based on MBTI personality types with curated activities for each type.
 
 ## 🚀 Live Demo
 
-Visit the live app: [Your GitHub Pages URL will be here]
+Visit the live app: https://loy-second-alias.github.io/mbti-activity-generator/
 
 ## ✨ Features
 
 - 🎨 Dreamy pastel glassmorphism design
-- 🤖 AI-powered activity generation via Google Gemini
+- 🎯 Curated activities for all 16 MBTI types
 - ❤️ Save favorite activities
 - ⚙️ Customizable settings
 - 📱 Fully responsive design
 - ✨ Smooth animations with Framer Motion
+- ⚡ Instant results (no API calls needed)
 
 ## 🛠️ Tech Stack
 
@@ -21,7 +22,7 @@ Visit the live app: [Your GitHub Pages URL will be here]
 - Vite
 - Framer Motion
 - Lucide React Icons
-- Google Gemini API
+- Custom CSS with Glassmorphism
 
 ## 📦 Local Development
 
@@ -73,11 +74,9 @@ npm run build
 # Then upload the 'dist' folder to your hosting service
 ```
 
-## 🔑 API Configuration
+## 🎯 How It Works
 
-The app uses Google Gemini API for activity generation. The API key is stored in `src/config.js`.
-
-**For production**: Consider using environment variables or a backend proxy to keep your API key secure.
+The app contains a curated database of activities for each of the 16 MBTI personality types. When you select a type, it randomly shows 4 activities from that type's collection. Click "Generate New Ideas" to see different activities from the same type.
 
 ## 📝 License
 
