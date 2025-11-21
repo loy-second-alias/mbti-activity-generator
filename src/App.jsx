@@ -207,10 +207,6 @@ function App() {
                 index={index}
                 isFavorite={favorites.some(f => f.id === act.id)}
                 onToggleFavorite={toggleFavorite}
-                onDetails={(a) => {
-                  setCurrentActivity(a);
-                  setView('details');
-                }}
               />
             ))}
           </div>
@@ -374,10 +370,6 @@ function App() {
               index={index}
               isFavorite={true}
               onToggleFavorite={toggleFavorite}
-              onDetails={(a) => {
-                setCurrentActivity(a);
-                setView('details'); // Note: Back button logic needs adjustment for favorites
-              }}
             />
           ))}
         </div>

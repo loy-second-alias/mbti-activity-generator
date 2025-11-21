@@ -16,12 +16,17 @@ export function MBTICard({ type, onClick, index }) {
             whileHover={{ scale: 1.02, borderColor: 'var(--type-accent)' }}
             whileTap={{ scale: 0.98 }}
         >
-            <div className="mbti-card-header">
-                <span className="mbti-code">{type.code}</span>
-                <span className="mbti-badge">{type.category}</span>
-            </div>
-            <h3 className="mbti-name">{type.name}</h3>
-            <p className="mbti-desc">{type.desc}</p>
+            {/* Top Right Badge */}
+            <span className="mbti-badge">{type.category}</span>
+
+            {/* Centered Code */}
+            <span className="mbti-code">{type.code}</span>
+
+            {/* Nickname */}
+            <h3 className="mbti-nickname">{type.name}</h3>
+
+            {/* Bottom Category Text */}
+            <span className="mbti-category-text">{type.category}</span>
         </motion.div>
     );
 }
