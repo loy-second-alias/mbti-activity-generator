@@ -1,0 +1,11 @@
+@import './styles/variables.css';
+@import './styles/animations.css';
+@import './styles/glass.css';
+@import './styles/main.css';
+@import './styles/responsive.css';
+
+/* React specific overrides */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

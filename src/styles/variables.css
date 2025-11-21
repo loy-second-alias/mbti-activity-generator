@@ -1,0 +1,38 @@
+:root {
+    /* Typography */
+    --font-primary: 'Nunito', sans-serif;
+    --font-secondary: 'Quicksand', sans-serif;
+
+    /* Colors - MBTI Analysts (NT) */
+    --color-intj-primary: #b8c5e0; --color-intj-accent: #8b9dc3;
+    --color-intp-primary: #c5d8e0; --color-intp-accent: #9bb8c8;
+    --color-entj-primary: #c5b8d8; --color-entj-accent: #a395b8;
+    --color-entp-primary: #d8c5e0; --color-entp-accent: #b89bc8;
+
+    /* Colors - MBTI Diplomats (NF) */
+    --color-infj-primary: #d8c5d0; --color-infj-accent: #b89bb0;
+    --color-infp-primary: #e0c5d8; --color-infp-accent: #c89bb8;
+    --color-enfj-primary: #e0c5c5; --color-enfj-accent: #c89b9b;
+    --color-enfp-primary: #e8d5c0; --color-enfp-accent: #d0b095;
+
+    /* Colors - MBTI Sentinels (SJ) */
+    --color-istj-primary: #d5d8c0; --color-istj-accent: #b0b895;
+    --color-isfj-primary: #c8e0c5; --color-isfj-accent: #a0c89b;
+    --color-estj-primary: #c0d5c8; --color-estj-accent: #95b0a0;
+    --color-esfj-primary: #c0d8d5; --color-esfj-accent: #95b8b0;
+
+    /* Colors - MBTI Explorers (SP) */
+    --color-istp-primary: #c0d0d8; --color-istp-accent: #95acb8;
+    --color-isfp-primary: #d8d0c0; --color-isfp-accent: #b8ac95;
+    --color-estp-primary: #e0d0c0; --color-estp-accent: #c8ac95;
+    --color-esfp-primary: #e8c8c0; --color-esfp-accent: #d0a095;
+
+    /* Global Colors */
+    --text-dark: #5a4a6a;
+    --text-light: #f0e6f5;
+    --bg-blob-1: #e6d5f0;
+    --bg-blob-2: #ffe6e0;
+    --bg-blob-3: #e0f5e6;
+    --bg-blob-4: #fff5e6;
+    --bg-blob-5: #e0eef5;
+}

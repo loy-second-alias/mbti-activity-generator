@@ -1,0 +1,16 @@
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 16px;
+    }
+
+    .app-header {
+        padding: 12px 20px;
+        margin-bottom: 24px;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+}
