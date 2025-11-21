@@ -52,7 +52,17 @@ export async function generateActivities(mbtiType) {
         });
 
         if (!response.ok) {
-            throw new Error(`API Error: ${response.status}`);
+            const errorData = await response.json().catch(() => ({}));
+
+            if (response.status === 429) {
+                throw new Error('Rate limit reached. Please wait a minute and try again.');
+            } else if (response.status === 403) {
+                throw new Error('API key invalid or quota exceeded. Please check your API key.');
+            } else if (response.status === 404) {
+                throw new Error('API endpoint not found. The model may not be available.');
+            } else {
+                throw new Error(`API Error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+            }
         }
 
         const data = await response.json();
