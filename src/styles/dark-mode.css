@@ -1,0 +1,88 @@
+/* Dark Mode Variables */
+:root {
+    --dark-bg-base: #0a0e27;
+    --dark-bg-elevated: #12182e;
+    --dark-bg-overlay: rgba(18, 24, 46, 0.8);
+
+    --dark-accent-blue-1: #1a2847;
+    --dark-accent-blue-2: #243056;
+    --dark-accent-blue-3: #2e3a5f;
+
+    --dark-text-primary: #e8e6f0;
+    --dark-text-secondary: #b8b4c8;
+    --dark-text-tertiary: #8a86a0;
+}
+
+/* Dark Mode Global Overrides */
+body.dark-mode {
+    background-color: var(--dark-bg-base);
+    color: var(--dark-text-primary);
+}
+
+.dark-mode-bg {
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0a0e27 100%);
+}
+
+/* Glassmorphism in Dark Mode */
+body.dark-mode .glass-panel,
+body.dark-mode .glass-strong,
+body.dark-mode .glass-light,
+body.dark-mode .mbti-card,
+body.dark-mode .activity-card,
+body.dark-mode .app-header {
+    background: rgba(18, 24, 46, 0.6);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .mbti-name,
+body.dark-mode .activity-title,
+body.dark-mode .activity-desc,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: var(--dark-text-primary);
+}
+
+body.dark-mode .activity-meta {
+    color: var(--dark-text-secondary);
+}
+
+/* Constellation Animation */
+.constellation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Whoosh Transition */
+.theme-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
+@keyframes whoosh-reveal {
+    0% {
+        clip-path: circle(0% at var(--click-x) var(--click-y));
+    }
+
+    100% {
+        clip-path: circle(150% at var(--click-x) var(--click-y));
+    }
+}
+
+.animating-theme {
+    animation: whoosh-reveal 0.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}

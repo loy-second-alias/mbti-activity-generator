@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
+import { IconUtils } from './IconUtils';
 
 export function ActivityCard({ activity, typeColor, onToggleFavorite, onDetails, isFavorite, index }) {
     return (
@@ -26,9 +27,9 @@ export function ActivityCard({ activity, typeColor, onToggleFavorite, onDetails,
             <p className="activity-desc">{activity.description}</p>
 
             <div className="activity-meta">
-                <span>⏱️ {activity.time}</span>
-                <span>👥 {activity.groupSize}</span>
-                <span>⚡ {activity.energy}</span>
+                <span className="meta-item"><IconUtils.Time size={16} /> {activity.time}</span>
+                <span className="meta-item"><IconUtils.Group size={16} /> {activity.groupSize}</span>
+                <span className="meta-item"><IconUtils.Energy size={16} /> {activity.energy}</span>
             </div>
 
             <div className="activity-actions">
@@ -45,7 +46,7 @@ export function ActivityCard({ activity, typeColor, onToggleFavorite, onDetails,
                         onToggleFavorite(activity);
                     }}
                 >
-                    <Heart
+                    <IconUtils.Heart
                         size={20}
                         fill={isFavorite ? "#ff4081" : "none"}
                         color={isFavorite ? "#ff4081" : "currentColor"}
