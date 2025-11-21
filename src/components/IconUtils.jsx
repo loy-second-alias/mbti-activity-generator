@@ -54,6 +54,7 @@ export const IconUtils = {
     Important: (props) => <AlertTriangle {...props} />,
     Variation: (props) => <Sparkles {...props} />,
     Alternative: (props) => <Repeat {...props} />,
+    Sparkles: (props) => <Sparkles {...props} />,
 
     // Vibe/Category Mapping
     getIconForVibe: (vibe) => {

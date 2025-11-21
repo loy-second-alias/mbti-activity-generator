@@ -13,20 +13,6 @@
     --dark-text-tertiary: #8a86a0;
 }
 
-/* Dark Mode Global Overrides */
-body.dark-mode {
-    background-color: var(--dark-bg-base);
-    color: var(--dark-text-primary);
-}
-
-.dark-mode-bg {
-    background: radial-gradient(circle at center, #1a1a2e 0%, #0a0e27 100%);
-}
-
-/* Glassmorphism in Dark Mode */
-body.dark-mode .glass-panel,
-body.dark-mode .glass-strong,
-body.dark-mode .glass-light,
 body.dark-mode .mbti-card,
 body.dark-mode .activity-card,
 body.dark-mode .app-header {
